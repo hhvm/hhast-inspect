@@ -1,0 +1,22 @@
+{
+    "name": "hhvm/hhast-inspect",
+    "description": "TODO",
+    "bin": [
+      "bin/hhast-inspect",
+      "bin/hhast-inspect.hack"
+    ],
+    "license": "MIT",
+    "extra": {
+      "branch-alias": {
+        "dev-master": "4.x-dev"
+      }
+    },
+    "require": {
+        "hhvm": "^4.78",
+        "hhvm/hhast": "^4.78",
+        "hhvm/hsl": "^4.41",
+        "hhvm/hhvm-autoload": "^3.0",
+        "facebook/hh-clilib": "^2.5.0rc1",
+        "facebook/xhp-lib": "^4.0"
+    }
+}
