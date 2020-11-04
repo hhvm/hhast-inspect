@@ -12,7 +12,8 @@ namespace Facebook\HHASTInspect;
 use namespace Facebook\HHAST;
 use namespace HH\Lib\{C, Dict, Str, Vec};
 use type Facebook\CLILib\CLIWithRequiredArguments;
-use type HH\Lib\_Private\PHPWarningSuppressor;
+use type /* HHAST_IGNORE_ERROR[NamespacePrivateLinter] */ HH\Lib\_Private\PHPWarningSuppressor
+;
 use namespace Facebook\CLILib\CLIOptions;
 
 use namespace /* HHAST_IGNORE_ERROR[UseStatementWithAs] */ Facebook\XHP\Core as x
