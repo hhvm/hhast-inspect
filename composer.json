@@ -1,6 +1,7 @@
 {
     "name": "hhvm/hhast-inspect",
-    "description": "TODO",
+    "description": "Tool for interactively exploring the AST of Hack programs",
+    "type": "project",
     "bin": [
       "bin/hhast-inspect",
       "bin/hhast-inspect.hack"
