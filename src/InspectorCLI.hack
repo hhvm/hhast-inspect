@@ -12,8 +12,6 @@ namespace Facebook\HHASTInspect;
 use namespace Facebook\HHAST;
 use namespace HH\Lib\{C, Dict, Str, Vec};
 use type Facebook\CLILib\CLIWithRequiredArguments;
-use type /* HHAST_IGNORE_ERROR[NamespacePrivateLinter] */ HH\Lib\_Private\PHPWarningSuppressor
-;
 use namespace Facebook\CLILib\CLIOptions;
 
 use namespace /* HHAST_IGNORE_ERROR[UseStatementWithAs] */ Facebook\XHP\Core as x
@@ -112,12 +110,15 @@ final class InspectorCLI extends CLIWithRequiredArguments {
         $result = \pcntl_exec('/usr/bin/open', varray[$filename], $env);
         break;
       case OSFamily::LINUX:
-        using ($_no_warnings = new PHPWarningSuppressor()) {
+        $error_reporting = \error_reporting(0);
+        try {
           $result = \pcntl_exec(
             '/usr/bin/sensible-browser',
             varray[$filename],
             $env,
           );
+        } finally {
+          \error_reporting($error_reporting);
         }
         if ($result === false) {
           $result = \pcntl_exec('/usr/bin/xdg-open', varray[$filename], $env);
