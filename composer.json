@@ -9,11 +9,12 @@
     "license": "MIT",
     "extra": {
       "branch-alias": {
-        "dev-master": "4.x-dev"
+        "dev-master": "4.x-dev",
+        "dev-main": "4.x-dev"
       }
     },
     "require": {
-        "hhvm": "^4.78",
+        "hhvm": "^4.102",
         "hhvm/hhast": "^4.78",
         "hhvm/hsl": "^4.41",
         "hhvm/hhvm-autoload": "^3.0",
