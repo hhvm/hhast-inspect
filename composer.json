@@ -20,5 +20,10 @@
         "hhvm/hhvm-autoload": "^3.0",
         "facebook/hh-clilib": "^2.5.0rc1",
         "facebook/xhp-lib": "^4.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "hhvm/hhvm-autoload": true
+        }
     }
 }
