@@ -107,21 +107,21 @@ final class InspectorCLI extends CLIWithRequiredArguments {
 
     switch ($os) {
       case OSFamily::MACOS:
-        $result = \pcntl_exec('/usr/bin/open', varray[$filename], $env);
+        $result = \pcntl_exec('/usr/bin/open', vec[$filename], $env);
         break;
       case OSFamily::LINUX:
         $error_reporting = \error_reporting(0);
         try {
           $result = \pcntl_exec(
             '/usr/bin/sensible-browser',
-            varray[$filename],
+            vec[$filename],
             $env,
           );
         } finally {
           \error_reporting($error_reporting);
         }
         if ($result === false) {
-          $result = \pcntl_exec('/usr/bin/xdg-open', varray[$filename], $env);
+          $result = \pcntl_exec('/usr/bin/xdg-open', vec[$filename], $env);
         }
         break;
       default:
