@@ -14,7 +14,7 @@
       }
     },
     "require": {
-        "hhvm": "^4.102",
+        "hhvm": "^4.128",
         "hhvm/hhast": "^4.78",
         "hhvm/hsl": "^4.41",
         "hhvm/hhvm-autoload": "^3.0",
